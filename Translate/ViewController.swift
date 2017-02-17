@@ -12,17 +12,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBOutlet weak var textToTranslate: UITextView!
     @IBOutlet weak var translatedText: UITextView!
-    @IBOutlet weak var languageChoice: UIPickerView!
+    @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var displayLang: UILabel!
     
-    var languages = ["French", "Spanish", "Turkish", "German"]
+    var languages = ["French", "Spanish", "German"]
     
     //var data = NSMutableData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        languageChoice.delegate = self
-        languageChoice.dataSource = self
+        pickerView.delegate = self
+        pickerView.dataSource = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,7 +35,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let str = textToTranslate.text
         let escapedStr = str?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         
-        let langStr = ("en|fr").addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+        let langStr = ("en|es").addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         
         let urlStr:String = ("https://api.mymemory.translated.net/get?q="+escapedStr!+"&langpair="+langStr!)
         
@@ -78,15 +78,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return 1
     }
     
-    func pickerView(_ languageChoice: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return languages.count
     }
     
-    func languageChoice(_ languageChoice: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return languages[row]
     }
     
-    func languageChoice(_ languageChoice: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         displayLang.text = languages[row]
     }
 }
