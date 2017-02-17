@@ -8,16 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var textToTranslate: UITextView!
     @IBOutlet weak var translatedText: UITextView!
+    @IBOutlet weak var languageChoice: UIPickerView!
+    @IBOutlet weak var displayLang: UILabel!
+    
+    var languages = ["French", "Spanish", "Turkish"]
     
     //var data = NSMutableData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        languageChoice.delegate = self
+        languageChoice.dataSource = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -67,6 +72,22 @@ class ViewController: UIViewController {
             }
         }
         
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ languageChoice: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return languages.count
+    }
+    
+    func languageChoice(_ languageChoice: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return languages[row]
+    }
+    
+    func languageChoice(_ languageChoice: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        displayLang.text = languages[row]
     }
 }
 
