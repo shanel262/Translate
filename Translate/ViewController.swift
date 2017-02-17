@@ -15,7 +15,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var languageChoice: UIPickerView!
     @IBOutlet weak var displayLang: UILabel!
     
-    var languages = ["French", "Spanish", "Turkish"]
+    var languages = ["French", "Spanish", "Turkish", "German"]
     
     //var data = NSMutableData()
     
