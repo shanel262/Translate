@@ -15,7 +15,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var displayLang: UILabel!
     
-    var languages = ["French", "Spanish", "German"]
+    var languages = ["French", "German", "Spanish"]
     
     //var data = NSMutableData()
     
@@ -23,6 +23,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         super.viewDidLoad()
         pickerView.delegate = self
         pickerView.dataSource = self
+        displayLang.text = languages[0]
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,8 +35,20 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         let str = textToTranslate.text
         let escapedStr = str?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+
+        var translateTo = ""
+        switch pickerView.selectedRow(inComponent: 0) {
+        case 0:
+            translateTo = "fr"
+        case 1:
+            translateTo = "de"
+        case 2:
+            translateTo = "es"
+        default:
+            translateTo = "fr"
+        }
         
-        let langStr = ("en|es").addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+        let langStr = ("en|"+translateTo).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         
         let urlStr:String = ("https://api.mymemory.translated.net/get?q="+escapedStr!+"&langpair="+langStr!)
         
