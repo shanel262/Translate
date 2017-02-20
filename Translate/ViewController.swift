@@ -31,6 +31,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         // Dispose of any resources that can be recreated.
     }
     
+    override func touchesBegan(_: Set<UITouch>, with: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     @IBAction func translate(_ sender: AnyObject) {
         
         let str = textToTranslate.text
