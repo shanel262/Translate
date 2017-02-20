@@ -63,6 +63,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         //var data = NSMutableData()var data = NSMutableData()
         
         let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        indicator.color = UIColor.blue
         indicator.center = view.center
         view.addSubview(indicator)
         indicator.startAnimating()
