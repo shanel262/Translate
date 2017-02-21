@@ -16,6 +16,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var displayLang: UILabel!
     
     var languages = ["French", "German", "Spanish"]
+    let defaultSession = URLSession(configuration: URLSessionConfiguration.default)
     
     //var data = NSMutableData()
     
@@ -70,13 +71,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         var result = "<Translation Error>"
         
-        NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) { response, data, error in
-            
-            indicator.stopAnimating()
-            
+        let task = defaultSession.dataTask(with: request){
+            (data, response, error) in
+
             if let httpResponse = response as? HTTPURLResponse {
                 if(httpResponse.statusCode == 200){
-                    
+
                     let jsonDict: NSDictionary!=(try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)) as! NSDictionary
                     
                     if(jsonDict.value(forKey: "responseStatus") as! NSNumber == 200){
@@ -86,10 +86,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     }
                 }
                 
-                self.translatedText.text = result
+                DispatchQueue.main.sync()
+                {
+                    indicator.stopAnimating()
+                    self.translatedText.text = result
+                }
             }
         }
-        
+        task.resume()
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
