@@ -47,25 +47,15 @@
                                 <rect key="frame" x="16" y="396" width="343" height="116"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRL-WB-YZ7">
-                                <rect key="frame" x="16" y="607" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="IRL-WB-YZ7" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="CLj-H2-mZg"/>
                             <constraint firstItem="Tk9-7M-DEK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="139.5" id="F3k-LH-0ec"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Tk9-7M-DEK" secondAttribute="trailing" constant="139.5" id="Hz2-aR-7q3"/>
-                            <constraint firstItem="IRL-WB-YZ7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="MJW-bg-pWf"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Tk9-7M-DEK" secondAttribute="bottom" constant="91" id="UAy-hi-hKH"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IRL-WB-YZ7" secondAttribute="bottom" constant="39" id="i2D-PY-bgk"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="displayLang" destination="IRL-WB-YZ7" id="sRb-sF-HmT"/>
                         <outlet property="pickerView" destination="HAg-7d-DVU" id="a37-dD-BUe"/>
                         <outlet property="textToTranslate" destination="dii-Vg-90N" id="L4z-3E-LIh"/>
                         <outlet property="translatedText" destination="LaV-KV-DTJ" id="7zP-s5-tTn"/>

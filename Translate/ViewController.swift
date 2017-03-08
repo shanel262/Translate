@@ -8,12 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
     
     @IBOutlet weak var textToTranslate: UITextView!
     @IBOutlet weak var translatedText: UITextView!
     @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var displayLang: UILabel!
     
     var languages = ["French", "German", "Spanish"]
     let defaultSession = URLSession(configuration: URLSessionConfiguration.default)
@@ -22,9 +21,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        textToTranslate.delegate = self
         pickerView.delegate = self
         pickerView.dataSource = self
-        displayLang.text = languages[0]
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,6 +33,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     override func touchesBegan(_: Set<UITouch>, with: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textToTranslate.text = ""
     }
     
     @IBAction func translate(_ sender: AnyObject) {
@@ -108,8 +111,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return languages[row]
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        displayLang.text = languages[row]
-    }
+//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//    }
 }
 
