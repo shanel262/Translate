@@ -41,6 +41,16 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
+    @IBAction func swapText(_ sender: UIButton) {
+        let text = textToTranslate.text
+        textToTranslate.text = translatedText.text
+        translatedText.text = text
+        let comp0Row = pickerView.selectedRow(inComponent: 0) //left side
+        let comp1Row = pickerView.selectedRow(inComponent: 1) //right side
+        pickerView.selectRow(comp1Row, inComponent: 0, animated: true)
+        pickerView.selectRow(comp0Row, inComponent: 1, animated: true)
+    }
+    
     @IBAction func translate(_ sender: AnyObject) {
         
         let str = textToTranslate.text
