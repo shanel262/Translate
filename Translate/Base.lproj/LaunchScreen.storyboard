@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,12 +20,67 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21C-bW-VTM">
+                                <rect key="frame" x="151" y="173" width="73" height="30"/>
+                                <color key="backgroundColor" red="0.45490196078431372" green="0.44705882352941173" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="63" id="v5R-Pf-ZON"/>
+                                </constraints>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tXR-Lt-ec7">
+                                <rect key="frame" x="16" y="28" width="343" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="LUb-pZ-Nca"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="23k-up-LfA">
+                                <rect key="frame" x="16" y="219" width="343" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="Vcm-Ct-Epy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ku9-Ds-smL">
+                                <rect key="frame" x="0.0" y="387" width="375" height="95"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0p-zs-Bdp">
+                                <rect key="frame" x="140" y="513" width="95" height="30"/>
+                                <color key="backgroundColor" red="0.45490196078431372" green="0.44705882352941173" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="Vvq-2W-DHd"/>
+                                </constraints>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.41960784313725491" green="0.72549019607843135" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="23k-up-LfA" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="5Ds-RK-6cq"/>
+                            <constraint firstItem="23k-up-LfA" firstAttribute="top" secondItem="21C-bW-VTM" secondAttribute="bottom" constant="17" id="CWP-YB-RAq"/>
+                            <constraint firstItem="ku9-Ds-smL" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="DZ2-5P-t6W"/>
+                            <constraint firstItem="ku9-Ds-smL" firstAttribute="top" secondItem="23k-up-LfA" secondAttribute="bottom" constant="42" id="FgK-R8-kVk"/>
+                            <constraint firstItem="ku9-Ds-smL" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="OPN-K5-eiN"/>
+                            <constraint firstItem="23k-up-LfA" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="OWy-sS-Wwe"/>
+                            <constraint firstItem="tXR-Lt-ec7" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="RXa-by-rbd"/>
+                            <constraint firstItem="21C-bW-VTM" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="RjG-bB-aW0"/>
+                            <constraint firstItem="s0p-zs-Bdp" firstAttribute="top" secondItem="ku9-Ds-smL" secondAttribute="bottom" constant="31" id="V4y-gs-4zN"/>
+                            <constraint firstItem="tXR-Lt-ec7" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="cPZ-rd-f9M"/>
+                            <constraint firstItem="tXR-Lt-ec7" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="28" id="cbb-Cr-5Ic"/>
+                            <constraint firstItem="s0p-zs-Bdp" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="fBB-X3-w8O"/>
+                            <constraint firstAttribute="trailing" secondItem="ku9-Ds-smL" secondAttribute="trailing" id="gw5-Gh-eyI"/>
+                            <constraint firstItem="23k-up-LfA" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lEr-dm-MQe"/>
+                            <constraint firstItem="tXR-Lt-ec7" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="scM-eu-SS6"/>
+                            <constraint firstItem="21C-bW-VTM" firstAttribute="top" secondItem="tXR-Lt-ec7" secondAttribute="bottom" constant="17" id="w9E-Ak-iWY"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
 </document>
