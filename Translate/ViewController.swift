@@ -36,7 +36,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        textToTranslate.text = ""
+        if(textToTranslate.text.contains("<")){
+            textToTranslate.text = ""
+        }
     }
     
     @IBAction func translate(_ sender: AnyObject) {
@@ -74,6 +76,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         if(translateFrom == translateTo){
             self.translatedText.text = "CHOSEN LANGUAGES MUST BE DIFFERENT"
+        }
+        else if(!textToTranslate.hasText || textToTranslate.text.contains("<")){
+            self.translatedText.text = "PLEASE ENTER TEXT TO TRANSLATE"
         }
         else
         {
@@ -133,7 +138,24 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return languages[component][row]
     }
     
-//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if(component == 0){
+            if(textToTranslate.text.contains("<") || !textToTranslate.hasText){
+                if(row == 0){
+                    textToTranslate.text = "<Text to Translate>"
+                }
+                else if(row == 1){
+                    textToTranslate.text = "<Texte à traduire>"
+                }
+                else if(row == 2){
+                    textToTranslate.text = "<Text zu übersetzen>"
+                }
+                else if(row == 3){
+                    textToTranslate.text = "<Texto a traducir>"
+                }
+            }
+            
+        }
+    }
 }
 
