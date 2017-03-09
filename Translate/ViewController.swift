@@ -7,6 +7,8 @@
 //
 
 import UIKit
+//import NVActivityIndicatorView
+
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
     
@@ -102,12 +104,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
             //var data = NSMutableData()var data = NSMutableData()
         
-            let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-            indicator.color = UIColor.blue
-            indicator.center = view.center
-            view.addSubview(indicator)
-            indicator.startAnimating()
-        
+//            let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+//            indicator.color = UIColor.blue
+//            indicator.center = view.center
+//            view.addSubview(indicator)
+//            indicator.startAnimating()
+//            let x = (view.frame.size.width / 2)
+//            let y = (view.frame.size.height / 2)
+//            let loading = NVActivityIndicatorView(frame: CGRect(x, y, 100, 100), type: .ballTrianglePath, color: UIColor.blue)
+            
             var result = "<Translation Error>"
         
             let task = defaultSession.dataTask(with: request){
@@ -127,7 +132,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 
                     DispatchQueue.main.sync()
                     {
-                        indicator.stopAnimating()
+//                        indicator.stopAnimating()
                         self.translatedText.text = result
                     }
                 }
