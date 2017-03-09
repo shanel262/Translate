@@ -7,8 +7,6 @@
 //
 
 import UIKit
-//import NVActivityIndicatorView
-
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
     
@@ -47,8 +45,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let text = textToTranslate.text
         textToTranslate.text = translatedText.text
         translatedText.text = text
-        let comp0Row = pickerView.selectedRow(inComponent: 0) //left side
-        let comp1Row = pickerView.selectedRow(inComponent: 1) //right side
+        let comp0Row = pickerView.selectedRow(inComponent: 0)
+        let comp1Row = pickerView.selectedRow(inComponent: 1)
         pickerView.selectRow(comp1Row, inComponent: 0, animated: true)
         pickerView.selectRow(comp0Row, inComponent: 1, animated: true)
     }
@@ -102,16 +100,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
             let request = URLRequest(url: url!)// Creating Http Request
         
-            //var data = NSMutableData()var data = NSMutableData()
-        
-//            let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-//            indicator.color = UIColor.blue
-//            indicator.center = view.center
-//            view.addSubview(indicator)
-//            indicator.startAnimating()
-//            let x = (view.frame.size.width / 2)
-//            let y = (view.frame.size.height / 2)
-//            let loading = NVActivityIndicatorView(frame: CGRect(x, y, 100, 100), type: .ballTrianglePath, color: UIColor.blue)
+            SwiftLoader.show(title: "Loading...", animated: true)
             
             var result = "<Translation Error>"
         
@@ -132,7 +121,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 
                     DispatchQueue.main.sync()
                     {
-//                        indicator.stopAnimating()
+                        SwiftLoader.hide()
                         self.translatedText.text = result
                     }
                 }
