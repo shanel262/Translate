@@ -44,7 +44,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="&lt;Translated Text&gt;" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LaV-KV-DTJ">
-                                <rect key="frame" x="16" y="204" width="343" height="115"/>
+                                <rect key="frame" x="16" y="207" width="343" height="115"/>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="115" id="p7L-YG-28v"/>
@@ -53,7 +53,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tk9-7M-DEK">
-                                <rect key="frame" x="140" y="514" width="95" height="30"/>
+                                <rect key="frame" x="140" y="517" width="95" height="30"/>
                                 <color key="backgroundColor" red="0.45490196078431372" green="0.44705882352941173" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="95" id="xtx-pC-M56"/>
@@ -66,7 +66,7 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HAg-7d-DVU">
-                                <rect key="frame" x="16" y="361" width="343" height="100"/>
+                                <rect key="frame" x="16" y="364" width="343" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="U4e-5I-em2"/>
                                 </constraints>
@@ -81,7 +81,7 @@
                             <constraint firstItem="dii-Vg-90N" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="28" id="SUD-P6-bFL"/>
                             <constraint firstItem="HAg-7d-DVU" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="TgB-Pc-oOL"/>
                             <constraint firstItem="HAg-7d-DVU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="V8Z-8n-1nW"/>
-                            <constraint firstItem="LaV-KV-DTJ" firstAttribute="top" secondItem="FNl-xW-OVP" secondAttribute="bottom" constant="14" id="bC3-BM-bw0"/>
+                            <constraint firstItem="LaV-KV-DTJ" firstAttribute="top" secondItem="FNl-xW-OVP" secondAttribute="bottom" constant="17" id="bC3-BM-bw0"/>
                             <constraint firstItem="LaV-KV-DTJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bg4-s3-WTP"/>
                             <constraint firstItem="HAg-7d-DVU" firstAttribute="top" secondItem="LaV-KV-DTJ" secondAttribute="bottom" constant="42" id="cDC-ky-QUO"/>
                             <constraint firstItem="dii-Vg-90N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cFM-Or-O8a"/>
