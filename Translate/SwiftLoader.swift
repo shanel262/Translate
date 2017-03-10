@@ -55,11 +55,11 @@ public class SwiftLoader: UIView {
         return Singleton.instance
     }
     
-    public class func show(animated animated: Bool) {
+    public class func show(animated: Bool) {
         self.show(title: nil, animated: animated)
     }
     
-    public class func show(title title: String?, animated : Bool) {
+    public class func show(title: String?, animated : Bool) {
         
         let currentWindow : UIWindow = UIApplication.shared.keyWindow!
         
